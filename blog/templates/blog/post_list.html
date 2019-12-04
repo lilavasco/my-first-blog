@@ -1,22 +1,18 @@
 <html>
 <head>
-    <title>Taller de programación</title>
+    <title>Taller Djangogirls</title>
 </head>
 <body>
-    <div>
-        <h1><a href="/">Blog de prueba</a></h1>
-    </div>
-    <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>We're happy to host your free website -- and keep it free -- for as long as you want to keep it running, but you'll need to log in at least once every three months and click the "Run until 3 months from today" button below. </p>
-    </div>
-    <p>Hi there!</p>
-    <p>It works!</p>
-    <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-        </div>
+        <div>
+                <h1><a href="/">Django Girls Blog</a></h1>
+            </div>
+            
+            {% for post in posts %}
+                <div>
+                    <p> publicado: {{ post.published_date }}</p>
+                    <h2><a href="">{{ post.title }}</a></h2>
+                    <p>{{ post.text|linebreaksbr }}</p>
+                </div>
+            {% endfor %}
 </body>
 </html>
